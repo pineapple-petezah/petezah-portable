@@ -1,14 +1,9 @@
 /* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    background-color: #171717; /* Dark background */
-    color: #ffffff; /* Default text color */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern, clean font */
+    background-color: #1e1e1e; /* Dark background */
+    color: #fff; /* Light text */
+    margin: 0;
 }
 
 /* Loading Screen */
@@ -18,12 +13,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: rgba(23, 23, 23, 0.9);
-    z-index: 999;
+    align-items: center;
+    z-index: 1000; /* Ensure it's on top */
 }
 
 .dots {
@@ -35,23 +29,23 @@ body {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #3f51b5; /* A pleasing blue color */
-    animation: dotPulse 0.6s infinite alternate;
+    background-color: #00e0ff; /* Cyan - vibrant gamer color */
+    animation: pulse 1s ease-in-out infinite;
 }
 
-@keyframes dotPulse {
-    0% {
+@keyframes pulse {
+    0%, 100% {
         transform: scale(1);
     }
-    100% {
-        transform: scale(1.5);
+    50% {
+        transform: scale(1.2);
     }
 }
 
 #fetching-text {
-    margin-top: 20px;
     font-size: 1.2em;
-    color: #ffffff;
+    color: #fff;
+    margin-top: 10px;
 }
 
 /* Navbar */
@@ -59,10 +53,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background-color: #222;
-    border-radius: 15px; /* Rounded edges */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-left {
@@ -77,184 +70,218 @@ body {
 }
 
 .nav-text {
-    font-size: 1.5em;
-    color: #ffffff;
+    font-size: 1.6em;
     font-weight: bold;
+    color: #00e0ff; /* Cyan for emphasis */
 }
 
-/* Move "Pete Zah" next to the logo */
 .navbar-right {
     display: flex;
-    align-items: center;
+    gap: 15px; /* Space between navbar icons */
 }
 
-.pete-zah {
-    margin-left: 10px; /* Space between logo and text */
-    font-size: 1.5em;
-    color: #ffffff;
-}
-
-/* Navbar Buttons */
 .nav-button {
-    margin-left: 20px;
-    font-size: 1.5em;
-    color: #ffffff;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.4em;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .nav-button:hover {
-    color: #3f51b5; /* Color on hover */
+    color: #00e0ff;
 }
+
 
 /* Banner */
 .banner {
+    background: linear-gradient(135deg, #282c34, #1e1e1e); /* Dark gradient */
+    color: white;
+    padding: 40px 20px;
     text-align: center;
-    padding: 50px 20px;
-    background: linear-gradient(135deg, #2196F3, #03A9F4); /* More boyish gradient */
-    border-radius: 20px;
-    margin: 20px auto;
-    width: 80%;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
 
 .banner h1 {
-    font-size: 3em;
-    background: -webkit-linear-gradient(#03A9F4, #2196F3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 4px #000; /* Subtle shadow effect */
+    margin-bottom: 15px;
 }
 
 .banner p {
     font-size: 1.2em;
-    margin: 20px 0;
+    line-height: 1.6;
 }
 
-/* Buttons */
 .buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
 button {
-    background-color: #3f51b5;
-    color: white;
+    padding: 12px 20px;
+    font-size: 1.1em;
     border: none;
-    border-radius: 10px;
-    padding: 15px 30px;
-    font-size: 1em;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #5c6bc0; /* Lighter shade on hover */
+.sigma {
+    background-color: #00e0ff; /* Cyan button */
+    color: #1e1e1e;
 }
 
-/* Review Section */
+.sigma:hover {
+    background-color: #00b0d8;
+}
+
+.discord {
+    background-color: #7289da; /* Discord purple */
+    color: white;
+}
+
+.discord:hover {
+    background-color: #6075b9;
+}
+
+/* Reviews */
+h3 {
+  margin-top: 30px;
+  color: #00e0ff; /* Cyan header */
+  text-align: center;
+}
+
 .review-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin: 20px auto;
-    width: 80%;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
 }
 
 .review-box {
-    background: #282828; /* Dark box */
-    border-radius: 15px;
+    background-color: #282c34;
     padding: 20px;
-    margin: 10px;
-    flex: 1 1 30%; /* Responsive flexbox */
-    position: relative;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    flex: 1 1 300px; /* Adjust as needed for responsiveness */
+    min-width: 250px; /* Minimum width */
 }
 
 .bottom-left {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 .bottom-left i {
-    color: #3f51b5;
+    color: #00e0ff; /* Cyan icon */
     margin-right: 5px;
 }
 
-/* FAQ Section */
+/* FAQ */
+hr {
+    border: 1px solid #444;
+    margin: 30px 0;
+}
+
 .container-hero {
-    margin: 20px auto;
-    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .text-box {
-    background: #282828;
-    border-radius: 15px;
+    background-color: #282c34;
     padding: 20px;
-    margin: 10px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.text-box h2 {
+    color: #00e0ff;
+    margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-    background-color: #1b1b1b; /* Slightly darker for professionalism */
-    padding: 30px;
+    background-color: #1e1e1e;
+    padding: 20px;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
 }
 
 .footerContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Centering the footer */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 960px;
     margin: 0 auto;
 }
 
-.footerContainer .socialIcons {
+.socialIcons {
     display: flex;
+    gap: 15px;
 }
 
 .socialIcons a {
-    margin: 0 15px;
-    color: #ffffff;
-    font-size: 1.5em;
+    color: #fff;
+    font-size: 1.4em;
     transition: color 0.3s ease;
 }
 
 .socialIcons a:hover {
-    color: #3f51b5; /* Change color on hover */
+    color: #00e0ff;
+}
+
+.footerNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footerNav li {
+    margin: 0;
+}
+
+.footerNav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footerNav a:hover {
+    color: #00e0ff;
 }
 
 .footerBottom {
-    margin-top: 20px;
-    font-size: 0.8em;
-    color: #cccccc; /* Lighter text for the footer copyright */
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #777;
 }
 
-/* Responsive Design */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .review-container {
         flex-direction: column;
-        align-items: center;
     }
 
     .review-box {
-        flex: 1 1 80%; /* Take full width on smaller screens */
+        flex-basis: 100%;
     }
 
-    .buttons-container {
+    .footerContainer {
         flex-direction: column;
+        align-items: center;
     }
-
-    button {
-        width: 100%;
-        margin: 5px 0;
+    .footerNav ul {
+        flex-direction: column;
+        align-items: center;
     }
 }
